@@ -74,7 +74,7 @@ class Post {
     result.addAll({'link': link});
     result.addAll({'imageLinks': imageLinks});
     result.addAll({'uid': uid});
-    result.addAll({'PostType': postType.type});
+    result.addAll({'postType': postType.type});
     result.addAll({'postedAt': postedAt.millisecondsSinceEpoch});
     result.addAll({'likes': likes});
     result.addAll({'commentIds': commentIds});

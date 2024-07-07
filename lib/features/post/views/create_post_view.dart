@@ -39,7 +39,9 @@ class _CreatePostScreenState extends ConsumerState<CreatePostScreen> {
   }
 
   void shareTweet() {
-    ref.watch(postControllerProvider);
+    if(postTextController.text.isNotEmpty){
+      ref.watch(postControllerProvider.notifier).sharePost(images: images, text: postTextController.text, context: context);
+    }
   }
 
   @override
@@ -62,7 +64,7 @@ class _CreatePostScreenState extends ConsumerState<CreatePostScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: RoundedSmallButton(
-              onTap: () {},
+              onTap: shareTweet,
               label: "Post",
               bgColor: Pallete.blueColor,
               txtColor: Pallete.whiteColor,

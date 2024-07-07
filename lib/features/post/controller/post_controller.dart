@@ -62,6 +62,7 @@ class PostController extends StateNotifier<bool> {
         repliedTo: "");
 
     final res = await _postAPI.sharePost(post);
+    state = false;
     res.fold((l) => showSnackBar(context, l.message), (r) => null);
   }
 
